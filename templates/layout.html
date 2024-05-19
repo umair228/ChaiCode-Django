@@ -1,0 +1,18 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+    ChaiCode |
+    {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% tailwind_css %}
+</head>
+<body>
+<nav>I will add navbar</nav>
+{% block content %}
+{% endblock content %}
+</body>
+</html>

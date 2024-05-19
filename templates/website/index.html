@@ -1,19 +1,10 @@
-{% load static %}
-{% load static tailwind_tags %}
+{% extends "layout.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chai Aur Django</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    {% tailwind_css %}
+{% block title %}
+    Home
+{% endblock %}
 
-</head>
-<body>
+{% block content %}
+    <h1>Home</h1>
     <h1 class="bg-blue-500 text-3xl">Chai aur Django Project: Homepage</h1>
-
-</body>
-</html>
-
+{% endblock %}

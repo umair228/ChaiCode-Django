@@ -94,5 +94,26 @@
         <li><strong>Digestive Health:</strong> The spices in chai, such as ginger and cloves, are thought to aid digestion and reduce bloating.</li>
 <li><strong>Immune Support:</strong> The spices in chai, such as ginger and cloves, have antimicrobial properties that may help support the immune system.</li>
     </ul>
+
     <p>While chai can be a healthy addition to your diet, it is important to enjoy it in moderation and be mindful of the sugar content. To make a healthier chai, you can use low-fat milk or a plant-based milk alternative, and sweeten it with honey or a natural sweetener like stevia. You can also experiment with different spices and flavorings to create a chai that suits your taste preferences and dietary needs.</p>
+
+
+    <div class="grid grid-cols-3 gap-4 m-4 rounded">
+    {% for chai in chais %}
+    <div class="bg-gray-500 p-5">
+    <img class="rounded shadow-lg" src="{{ chai.image.url }}" alt="{{ chai.name }}">
+    <h3 class="text-3xl font-bold ">{{ chai.name }}</h3>
+    <p>{{ chai.description }}</p>
+    <a href="{% url 'chai_detail' chai.id %}">
+        <button type="button" class="bg-blue-500 w-[100%] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            {{ chai.price }} {{ chai.currency }} - {{ chai.type }} - {{ chai.id }}
+        </button>
+    </a>
+
+    </div>
+    {% endfor %}
+        </div>
+
+
+
 {% endblock %}

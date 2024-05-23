@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Chai Detail Page
+{% endblock %}
+
+
+{% block content %}
+    <h1>all chai details</h1>
+
+    <h2>{{ chai.name }}</h2>
+    <h3>{{ chai.description }}</h3>
+    <h4>{{ chai.price }} {{ chai.currency }}</h4>
+{% endblock %}

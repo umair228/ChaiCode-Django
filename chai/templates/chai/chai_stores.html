@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+   <form method="POST">
+   {% csrf_token %}
+   {{ form.as_p }}
+       <button type="submit">Search Store </button>
+   </form>
+
+{#    <h1>Stores</h1>#}
+{#    <ul>#}
+{#        {% for store in stores %}#}
+{#            <li><a href="{% url 'store' store.id %}">{{ store.name }}</a></li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+
+    {% if stores %}
+        <h1>Stores available!!</h1>
+        <ul>
+            {% for store in stores %}
+                <li>{{ store.name }} {{ store.location }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No stores found</p>
+    {% endif %}
+
+
+{% endblock %}
